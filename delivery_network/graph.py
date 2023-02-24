@@ -40,7 +40,7 @@ class Graph:
         return output
     
     def add_edge(self, node1, node2, power_min, dist=1):
-        
+        self.nb_edges += 1
 
         if node1 in self.graph.keys():
             self.graph[node1].append((node2, power_min, dist))
@@ -125,5 +125,7 @@ def graph_from_file(filename):
             if len(lignei)>3:
                 dist=int(lignei[3])
                 G.add_edge(node1, node2, power_min, dist)
-            G.add_edge(node1, node2, power_min)
+            else :
+
+                G.add_edge(node1, node2, power_min)
     return G
